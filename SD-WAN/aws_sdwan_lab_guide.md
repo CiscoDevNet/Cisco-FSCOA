@@ -1,7 +1,11 @@
 aws lab guide
 ==============
+TARGET AUDIENCE: MSPs and or Companies who want to use Multi-Tenancy Calalyst SD-WAN
 
-open terminal in ide
+Please submit feature requests via git issues
+
+
+open terminal in ide (RECOMMEND INTELLIJ by JETBRAINS)
 cd to lab directory (you will have fun control on this directory)
 git clone repo 
 checkout branch (instructor will assign you a branch day of lab)

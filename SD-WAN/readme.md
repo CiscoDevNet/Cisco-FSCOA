@@ -3,7 +3,8 @@ REPO CONTACT: sconrod@cisco.com
 You may deploy, automate, configure, lifecycle all Cisco Products with APIs via Concourse Pipelines using OCI build containers and concourse pipelines
 securely integrated with Hashicorp Vault - as well as any other Application in the world that has a CLI, API etc.
 
-All tooling accept Cisco Products are open source and free 
+All tooling accept Cisco Products are open source and free and self managed - which gives you the freedom to update, upgrade any component 
+at will and re-run pipeline to ensure code builds correctly
 
 
 Pipeline login command:
