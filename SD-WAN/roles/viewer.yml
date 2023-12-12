@@ -1,0 +1,4 @@
+roles:
+  - name: viewer
+    local:
+      users: ["us-west-2a"]
