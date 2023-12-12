@@ -1,0 +1,219 @@
+display:
+  background_image: https://tetacourse.com/uploads/posts/2020-07/1595211523_1.jpg
+jobs:
+- name: lab-prep
+  plan:
+    - get: git-resource
+      trigger: true
+    - task: lab_prep
+      file: git-resource/tasks/aws_deploy/vault_prep.yml
+
+- name: push-ed25519
+  plan:
+    - get: git-resource
+      passed: [deploy-sdwan-cluster-vmanage-instances]
+      trigger: false
+    - task: push-aws-ed25519-keytasks
+      file: git-resource/tasks/push_ed25519_public_key/input/ed25519_push.yml
+
+- name: deploy-aws-vpc-cluster-cluster
+  public: true
+  plan:
+    - get: git-resource
+    - task: aws_deploy_vpc_cluster
+      file: git-resource/tasks/cluster/aws_deploy_env_cluster/input/aws_env_deploy_cluster.yml
+
+
+- name: deploy-aws-elastic-ips
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws-deploy-eips-cluster-vmanage-1
+          file: git-resource/tasks/cluster/aws_deploy_eips_cluster/input/vmanage/aws_deploy_eips_cluster_vmanage_1.yml
+        - task: aws-deploy-eips-cluster-vmanage-2
+          file: git-resource/tasks/cluster/aws_deploy_eips_cluster/input/vmanage/aws_deploy_eips_cluster_vmanage_2.yml
+        - task: aws-deploy-eips-cluster-vmanage-3
+          file: git-resource/tasks/cluster/aws_deploy_eips_cluster/input/vmanage/aws_deploy_eips_cluster_vmanage_3.yml
+        - task: aws-deploy-eips-cluster-vbond-1
+          file: git-resource/tasks/cluster/aws_deploy_eips_cluster/input/vbond/aws_deploy_eips_cluster_vbond_1.yml
+        - task: aws-deploy-eips-cluster-vbond-2
+          file: git-resource/tasks/cluster/aws_deploy_eips_cluster/input/vbond/aws_deploy_eips_cluster_vbond_2.yml
+        - task: aws-deploy-eips-cluster-vsmart-1
+          file: git-resource/tasks/cluster/aws_deploy_eips_cluster/input/vsmart/aws_deploy_eips_cluster_vsmart_1.yml
+        - task: aws-deploy-eips-cluster-vsmart-2
+          file: git-resource/tasks/cluster/aws_deploy_eips_cluster/input/vsmart/aws_deploy_eips_cluster_vsmart_2.yml
+    - task: vault-write-elastic-ips
+      file: git-resource/tasks/cluster/aws_deploy_eips_cluster/input/vault/aws_eip_addr_vault_cluster.yml
+
+
+- name: deploy-sdwan-cluster-vmanage-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws_deploy_cluster_vmanage_1
+          file: git-resource/tasks/cluster/aws_deploy_vmanage_cluster/input/aws_deploy_vmanage_1.yml
+        - task: aws_deploy_cluster_vmanage_2
+          file: git-resource/tasks/cluster/aws_deploy_vmanage_cluster/input/aws_deploy_vmanage_2.yml
+        - task: aws_deploy_cluster_vmanage_3
+          file: git-resource/tasks/cluster/aws_deploy_vmanage_cluster/input/aws_deploy_vmanage_3.yml
+
+- name: configure-sdwan-cluster-vmanage-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: true
+    - in_parallel:
+        - task: aws-cluster-vmanage_1-configure
+          file: git-resource/tasks/cluster/aws_configure_vmanage_cluster/input/configure_vmanage_1_ssh_task.yml
+        - task: aws-cluster-vmanage_2-configure
+          file: git-resource/tasks/cluster/aws_configure_vmanage_cluster/input/configure_vmanage_2_ssh_task.yml
+        - task: aws-cluster-vmanage_3-configure
+          file: git-resource/tasks/cluster/aws_configure_vmanage_cluster/input/configure_vmanage_3_ssh_task.yml
+
+- name: configure-sdwan-cluster-vbond-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: true
+    - in_parallel:
+        - task: aws_deploy_cluster_vbond_1
+          file: git-resource/tasks/cluster/aws_deploy_vbond_cluster/input/aws_deploy_vbond_1.yml
+        - task: aws_deploy_cluster_vbond_2
+          file: git-resource/tasks/cluster/aws_deploy_vbond_cluster/input/aws_deploy_vbond_2.yml
+
+
+
+- name: deploy-sdwan-cluster-vbond_1-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws_deploy_cluster_vbond_1
+          file: git-resource/tasks/cluster/aws_deploy_vbond_cluster/input/aws_deploy_vbond_1.yml
+
+- name: deploy-sdwan-cluster-vbond_2-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws_deploy_cluster_vbond_2
+          file: git-resource/tasks/cluster/aws_deploy_vbond_cluster/input/aws_deploy_vbond_2.yml
+
+- name: deploy-sdwan-cluster-vsmart_1-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws_deploy_cluster_vsmart_1
+          file: git-resource/tasks/cluster/aws_deploy_vsmart_cluster/input/aws_deploy_vsmart_1.yml
+
+- name: deploy-sdwan-cluster-vsmart_2-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws_deploy_cluster_vsmart_2
+          file: git-resource/tasks/cluster/aws_deploy_vsmart_cluster/input/aws_deploy_vsmart_2.yml
+
+- name: deploy-sdwan-cluster-vmanage-instances-1
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws_deploy_cluster_vmanage_1
+          file: git-resource/tasks/cluster/aws_deploy_vmanage_cluster/input/aws_deploy_vmanage_1.yml
+
+- name: deploy-sdwan-cluster-vmanage-instances-2
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws_deploy_cluster_vmanage_2
+          file: git-resource/tasks/cluster/aws_deploy_vmanage_cluster/input/aws_deploy_vmanage_2.yml
+
+
+- name: deploy-sdwan-cluster-vmanage-instances-3
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws_deploy_cluster_vmanage_3
+          file: git-resource/tasks/cluster/aws_deploy_vmanage_cluster/input/aws_deploy_vmanage_3.yml
+
+- name: configure-sdwan-cluster-vmanage_1-instance
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws-cluster-vmanage_1-configure
+          file: git-resource/tasks/cluster/aws_configure_vmanage_cluster/input/configure_vmanage_1_ssh_task.yml
+
+- name: configure-sdwan-cluster-vmanage_2-instance
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws-cluster-vmanage_2-configure
+          file: git-resource/tasks/cluster/aws_configure_vmanage_cluster/input/configure_vmanage_2_ssh_task.yml
+
+- name: configure-sdwan-cluster-vmanage_3-instance
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws-cluster-vmanage_3-configure
+          file: git-resource/tasks/cluster/aws_configure_vmanage_cluster/input/configure_vmanage_3_ssh_task.yml
+
+- name: update-lab-guide
+  public: true
+  plan:
+    - get: git-resource
+    - task: update_lab_guide
+      file: git-resource/tasks/docs/update_aws_lab_guide.yml
+
+
+- name: aws-start-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws-start-instances
+          file: git-resource/tasks/aws_start_stop_lab/input/aws_start.yml
+
+- name: aws-stop-instances
+  public: true
+  plan:
+    - get: git-resource
+      trigger: false
+    - in_parallel:
+        - task: aws-stop-instances
+          file: git-resource/tasks/aws_start_stop_lab/input/aws_stop.yml
+
+resource_types:
+resources:
+  - name: git-resource
+    source:
+      Username: ((Username))
+      branch: ((git-branch))
+      email: ((email))
+      private_key: ((private_key))
+      uri: git@github.com:devops-ontap/sdwan.git
+    type: git
+
+params:
+  UNPACK_ROOTFS: true
+  VAULT_ADDR: http://prod-vault.devops-ontap.com:8200

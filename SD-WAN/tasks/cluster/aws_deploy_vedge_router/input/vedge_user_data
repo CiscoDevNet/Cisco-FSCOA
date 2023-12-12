@@ -1,0 +1,36 @@
+#cloud-config
+
+disk_setup:
+  /dev/nvme1n1:
+    table_type: mbr
+    layout: false
+    overwrite: false
+fs_setup:
+  - device: /dev/nvme1n1
+    label: data
+    partition: none
+    filesystem: ext4
+    overwrite: false
+mounts:
+ - [ /dev/nvme1n1, /opt/data, "auto", "rw,nosuid,noexec", "0", "2" ]
+write_files:
+- path: /etc/confd/init/zcloud.xml
+  content: |
+    <config xmlns="http://tail-f.com/ns/config/1.0">
+      <system xmlns="http://viptela.com/system">
+        <aaa>
+          <user>
+            <name>admin</name>
+            <password>admin</password>
+            <group>netadmin</group>
+          </user>
+        </aaa>
+      </system>
+    </config>
+
+vinitparam:
+ - uuid : fd920820-234f-4c67-232b-e6d7fc8ea334
+ - otp : c61e7749c0fe46529f881051965671d2
+ - vbond : vbond.devops-ontap.com
+ - org : devops-ontap.com
+ - rcc : true

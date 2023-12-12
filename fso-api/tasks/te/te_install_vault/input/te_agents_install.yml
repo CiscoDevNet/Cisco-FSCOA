@@ -1,0 +1,32 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: sconrod/thousandeyes-image
+    tag: 1
+
+inputs:
+  - name: input
+
+params:
+  VAULT_ADDR: http://prod-vault.devops-ontap.com:8200
+  SSH_TOKEN: ((ssh-token.token))
+
+run:
+  path: /bin/sh
+  args:
+    - -ce
+    - |
+      export AWS_PAGER=""
+      NAME='us-west-1a'
+      export NAME
+      echo $NAME
+      pwd
+      ls -la
+      chmod a+x input/te_agents_install.sh
+      ./input/te_agents_install.sh
+
+
+      

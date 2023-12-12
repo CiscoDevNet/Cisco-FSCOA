@@ -1,0 +1,76 @@
+display:
+  background_image: https://tetacourse.com/uploads/posts/2020-07/1595211523_1.jpg
+jobs:
+  - name: lab-prep
+    plan:
+      - get: git-resource
+        trigger: true
+      - task: lab_prep
+        file: git-resource/tasks/aws_deploy/vault_prep.yml
+
+  - name: california
+    public: true
+    plan:
+      - get: git-resource
+        passed: [lab-prep]
+      - task: aws_deploy_vpc
+        file: git-resource/tasks/aws_deploy/california/aws_env_deploy.yml
+      - task: aws_deploy_ubuntu_california
+        file: git-resource/tasks/aws_deploy/california/aws_deploy_ubuntu.yml
+
+
+
+  - name: super-car-trader
+    public: true
+    plan:
+      - get: git-resource
+        passed: [california]
+      - task: aws_super_car_trader
+        file: git-resource/tasks/super-car-trader/input/super-car-trader.yml
+
+        
+  - name: ap-southeast-1-singapore
+    public: true
+    plan:
+      - get: git-resource
+        passed: [lab-prep]
+      - task: aws_deploy_vpc
+        file: git-resource/tasks/aws_deploy/singapore/aws_env_deploy.yml
+      - task: aws_deploy_ubuntu_singapore
+        file: git-resource/tasks/aws_deploy/singapore/aws_deploy_ubuntu.yml        
+
+
+
+  - name: ap-south-1-mumbai
+    public: true
+    plan:
+      - get: git-resource
+        passed: [lab-prep]
+      - task: aws_deploy_vpc
+        file: git-resource/tasks/aws_deploy/mumbai/aws_env_deploy.yml
+      - task: aws_deploy_ubuntu_mumbai
+        file: git-resource/tasks/aws_deploy/mumbai/aws_deploy_ubuntu.yml
+
+
+
+  - name: ap-southeast-2-sydney
+    public: true
+    plan:
+      - get: git-resource
+        passed: [lab-prep]
+      - task: aws_deploy_vpc
+        file: git-resource/tasks/aws_deploy/sydney/aws_env_deploy.yml
+      - task: aws_deploy_ubuntu_sydney
+        file: git-resource/tasks/aws_deploy/sydney/aws_deploy_ubuntu.yml
+
+
+resource_types:
+resources:
+  - name: git-resource
+    source:
+      Username: ((Username))
+      branch: ((git-branch))
+      email: ((email))
+      private_key: ((private_key))
+      uri: ((git-uri))
+    type: git

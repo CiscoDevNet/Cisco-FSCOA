@@ -1,0 +1,5 @@
+name='us-west-1a'
+region='us-west-2'
+az='us-west-1a'
+csr_ami_id=''
+ubuntu_ami_id=''

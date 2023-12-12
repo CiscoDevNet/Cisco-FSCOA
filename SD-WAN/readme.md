@@ -1,0 +1,73 @@
+REPO CONTACT: sconrod@cisco.com
+
+You may deploy, automate, configure, lifecycle all Cisco Products with APIs via Concourse Pipelines using OCI build containers and concourse pipelines
+securely integrated with Hashicorp Vault - as well as any other Application in the world that has a CLI, API etc.
+
+All tooling accept Cisco Products are open source and free and self managed - which gives you the freedom to update, upgrade any component 
+at will and re-run pipeline to ensure code builds correctly
+
+
+Pipeline login command:
+======
+fly --target=aspades login --concourse-url=http://prod-ci.devops-ontap.com:8080 -n aspades --username=aspades --password=
+
+Set-Pipeline command:
+==========
+fly -t prod-ci set-pipeline -c /Users/sconrod/dev/devops-ontap/sdwan/pipelines/sdwan-pipeline-python_v3.yml -p us-west-1a -l $params file
+
+Recordings and Webcasts
+======================
+https://www.youtube.com/live/vC9Bct3eUdQ?si=DJUobG8WLcgH8dvV - AWS
+https://www.youtube.com/live/eSMSy3T8430?si=uW43nYKCx04ovVAb - Azure
+https://www.youtube.com/@devops-ontap/videos
+
+FSO Stack APIs
+==============
+
+Webex meeting recording: Automation - Programmatically Auth to FSO APIs
+Password: gQSPhrT9
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=6c4ca1edec6eafe4f3e88b9e57961a2f
+
+Webex meeting recording: Quick Tips - OCI Ephemeral Build Containers in Concourse
+Password: 6Sh6m9CE
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=a0d08a622aec2d15339aa0d5db6318d5
+
+Webex meeting recording: Lab Day 1 - Thousand Eyes API - Standard Devops Operational Tasks
+Password: ApAe7S3g
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=5c73993c87022fd45c83a99ab1c0a93a
+
+Webex meeting recording: Lab Day 1 - ThousandEyes-Rapid Iteration - Developing Code using Tasks and Params
+Password: MhRrnPQ5
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=0a497284f3785953e7c886e8d347060b
+
+Webex meeting recording: Lab Day 1 - Securely building Thousand Eyes API Code Using Tasks and Vault Integration
+Password: aSeQAkP5
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=97e1c23b3636f615424c911d8a75010a
+
+Webex meeting recording: DEVOPS Way of Working - Coding in Build Containers
+Password: iXGa82UP
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=f22c97bcadbd07fe1fdc52ce4b4d5372
+
+Webex meeting recording: Devops - Automate Kubernetes Cluster Deploys to AWS
+Password: MrmshGd7
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=993c4247b9057d6babcec9249f07595f
+
+Webex meeting recording: AppD Cluster Agent Helm Install
+Password: dZyJwch2
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=b9c4f1916b9dc0ddeca3b6c55f49d98d
+
+Webex meeting recording: Automation - Programmatically Auth to FSO APIs
+Password: gQSPhrT9
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=6c4ca1edec6eafe4f3e88b9e57961a2f
+
+Webex meeting recording: Cisco FSO API Devops Training
+Password: An9e6WFA
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=099603108e6a3c45097b92a6a93f2e52
+
+SDWAN
+Webex meeting recording: Viptela SDWAN Automation for MSPs to Sell Products Online Via Marketplace
+Password: QnFpxJQ5
+Recording link: https://cisco.webex.com/cisco/ldr.php?RCID=ee5ac5f48ee0938f321b61fee6a90e8d
+
+
+
