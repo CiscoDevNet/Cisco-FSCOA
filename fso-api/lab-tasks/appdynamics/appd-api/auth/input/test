@@ -1,0 +1,6 @@
+curl -X POST -H "Content-Type: application/vnd.appd.cntrl+protobuf;v=1" -u 'TestApiClient@customer:face10d5-573e-4a75-8396-afa006fd8f19' "https://<controller address>/controller/api/oauth/access_token" -d 'grant_type=client_credentials&client_id=TestApiClient@customer&client_secret=face10d5-573e-4a75-8396-afa006fd8f19'
+
+{
+"access_token": "eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJBcHBEeW5hbWljcyIsImF1ZCI6IkFwcERfQVBJcyIsImV4cCI6MTUzNjI3MjI1NiwianRpIjoiT2twZHVDdmduSDdwMmduMnc4MFRtQSIsImlhdCI6MTUzNjI3MTk1NiwibmJmIjoxNTM2MjcxODM2LCJzdWIiOiJUZXN0QXBpQ2xpZW50IiwidHlwZSI6IkFQSV9DTElFTlQiLCJpZCI6ImFmZTQxMzg5LTJlNjMtNDQyYS1hY2U2LTEyYzU5NGFlOGM2OCIsImFjY3RJZCI6IjhlMGQ3NjI1LTY4YzEtNDE4Mi1hMmFmLWFhMTY1MzllZDg0OCIsImFjY3ROYW1lIjoiZTJlLWN1c3RvbWVyIn0.95EyDNV5muTN_4zGOXIPQQHOdVDSiEynKSgk08UHlh0",
+"expires_in": 300
+}
