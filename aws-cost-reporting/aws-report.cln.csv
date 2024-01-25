@@ -1,0 +1,25 @@
+service, environment, tenant, unblendedCost, blendedCost, usageQuantity, start_date, end_date, date, sp
+ 
+ AWS Amplify,  , 0.0000087801, 0.0000585339,start_date, end_date, date, sp, 0.0000087801, USD
+ AWS CloudTrail,  , 71.08274, 7108274,start_date, end_date, date, sp, 71.08274, USD
+ AWS Config,  , 2.265636384, 3837,start_date, end_date, date, sp, 2.2494, USD
+ AWS Cost Explorer,  , 22.27, 2227,start_date, end_date, date, sp, 22.27, USD
+ AWS Glue,  , 0.0007954284, 988,start_date, end_date, date, sp, 0.00079, USD
+ AWS Key Management Service,  , 4.8584222609, 7904.8347222609,start_date, end_date, date, sp, 4.8584222609, USD
+ AWS Lambda,  , 0.0077211093, 505.5221846514,start_date, end_date, date, sp, 0.0077211093, USD
+ AWS Secrets Manager,  , 0.007225, 1445,start_date, end_date, date, sp, 0.007225, USD
+ AWS Service Catalog,  , 0.0248055318, 42,start_date, end_date, date, sp, 0.0294, USD
+ EC2 - Other,  , 1008.2473164108, 28938.2260108016,start_date, end_date, date, sp, 1008.2473724913, USD
+ Amazon Elastic Compute Cloud - Compute,  , 246.9504869311, 2357.1629099277,start_date, end_date, date, sp, 246.9504869311, USD
+ Amazon Elastic Load Balancing,  , 121.8377354323, 4875.5363484691,start_date, end_date, date, sp, 121.8377354323, USD
+ Amazon Glacier,  , 0.0000020374, 0.0000403661,start_date, end_date, date, sp, 0.0000020374, USD
+ Amazon GuardDuty,  , 0.7767496145, 176273.0010556494,start_date, end_date, date, sp, 0.7767496145, USD
+ Amazon Route 53,  , 0.3057459041, 17095,start_date, end_date, date, sp, 0.3034296, USD
+ Amazon Simple Notification Service,  , 0.0011084695, 3011,start_date, end_date, date, sp, 0.001086, USD
+ Amazon Simple Queue Service,  , 0.0005896, 1474,start_date, end_date, date, sp, 0.0005896, USD
+ Amazon Simple Storage Service,  , 5.6931344297, 994987.3933058046,start_date, end_date, date, sp, 5.6882702932, USD
+ AmazonCloudWatch,  , 15.2474476308, 1232814.8784528868,start_date, end_date, date, sp, 15.2448501351, USD
+ CIS Apple macOS 12 Monterey Benchmark - Level 1,  , 0.02, 1,start_date, end_date, date, sp, 0.02, USD
+ Tax,  , 0, 0,start_date, end_date, date, sp, 0, USD
+ 
+ 

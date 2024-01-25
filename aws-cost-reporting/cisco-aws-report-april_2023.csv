@@ -1,0 +1,25 @@
+service, environment, tenant, unblendedCost, blendedCost, usageQuantity, start_date, end_date, date, sp
+ ,,,,,,,,,
+ AWS Amplify,  ,8.7801E-06,5.85339E-05,start_date, end_date, date, sp,8.7801E-06, USD
+ AWS CloudTrail,  ,71.08274,7108274,start_date, end_date, date, sp,71.08274, USD
+ AWS Config,  ,2.265636384,3837,start_date, end_date, date, sp,2.2494, USD
+ AWS Cost Explorer,  ,22.27,2227,start_date, end_date, date, sp,22.27, USD
+ AWS Glue,  ,0.000795428,988,start_date, end_date, date, sp,0.00079, USD
+ AWS Key Management Service,  ,4.858422261,7904.834722,start_date, end_date, date, sp,4.858422261, USD
+ AWS Lambda,  ,0.007721109,505.5221847,start_date, end_date, date, sp,0.007721109, USD
+ AWS Secrets Manager,  ,0.007225,1445,start_date, end_date, date, sp,0.007225, USD
+ AWS Service Catalog,  ,0.024805532,42,start_date, end_date, date, sp,0.0294, USD
+ EC2 - Other,  ,1008.247316,28938.22601,start_date, end_date, date, sp,1008.247372, USD
+ Amazon Elastic Compute Cloud - Compute,  ,246.9504869,2357.16291,start_date, end_date, date, sp,246.9504869, USD
+ Amazon Elastic Load Balancing,  ,121.8377354,4875.536348,start_date, end_date, date, sp,121.8377354, USD
+ Amazon Glacier,  ,2.0374E-06,4.03661E-05,start_date, end_date, date, sp,2.0374E-06, USD
+ Amazon GuardDuty,  ,0.776749615,176273.0011,start_date, end_date, date, sp,0.776749615, USD
+ Amazon Route 53,  ,0.305745904,17095,start_date, end_date, date, sp,0.3034296, USD
+ Amazon Simple Notification Service,  ,0.00110847,3011,start_date, end_date, date, sp,0.001086, USD
+ Amazon Simple Queue Service,  ,0.0005896,1474,start_date, end_date, date, sp,0.0005896, USD
+ Amazon Simple Storage Service,  ,5.69313443,994987.3933,start_date, end_date, date, sp,5.688270293, USD
+ AmazonCloudWatch,  ,15.24744763,1232814.878,start_date, end_date, date, sp,15.24485014, USD
+ CIS Apple macOS 12 Monterey Benchmark - Level 1,  ,0.02,1,start_date, end_date, date, sp,0.02, USD
+ Tax,  ,0,0,start_date, end_date, date, sp,0, USD
+ ,,,,,,,,,
+ ,,,,,,,,,
