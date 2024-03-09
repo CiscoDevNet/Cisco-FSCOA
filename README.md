@@ -16,6 +16,7 @@ Deploy the pipeline
 Verify the first pipeline with your custom params file (with your git ssh key) - this job checks that auth with all resources: git, dockerhub(public access),
 cloud provider, vault etc. If green you can then instantiate your first pipeline run.
 
-https://github.com/CiscoDevNet/Cisco-FSCOA/blob/main/Screenshot%202024-03-08%20at%205.59.50%E2%80%AFPM.png
-
+https://raw.githubusercontent.com/octocat/Hello-World/master/README/CiscoDevNet/Cisco-FSCOA/blob/05719df764294dae0bdb11f85fc458ca790e7495/Screenshot%202024-03-08%20at%205.59.50%E2%80%AFPM.png
 Deploys VPC and All Objects and Deploys SDWAN Images, Configures a high degree of SDWAN Connects and Configures up to the point of Certificate Installation.
+
+More Specific Documentation is included in Repo 
