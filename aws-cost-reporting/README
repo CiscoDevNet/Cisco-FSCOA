@@ -1,0 +1,33 @@
+1.
+run prep-env to ensure you are in the dev environment
+
+Port Forward to the cost reporting pod
+
+download fly and install it then poit it to the pod
+
+fly --target automation-web login --concourse-url http://127.0.0.1:8080 -u test -p test
+
+2.
+you must have your aws credentials set up as follows:
+copy your ~/.aws/credentials and config to this directory
+
+To run the report first in read only mode retain the comment in the final line
+of the task_aws.sh file for the python script "aws-import-csv-good.py"
+
+To run the report in write mode which updates the database uncomment that line.
+
+3.
+Update the date range in the aws-run-collect.py
+
+4.
+Do a Dry run before automating the database import to verify there are not api issues.
+
+5.
+Ensure you are port forwarding to concourse
+
+6.
+fly -t automation-web e -c task_aws.yml
+
+Post Import Steps
+
+7. Run the set date scriptss

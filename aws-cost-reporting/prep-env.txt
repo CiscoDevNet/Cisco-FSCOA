@@ -1,0 +1,5 @@
+This sets the IDE to operate in the proper kubernetes environment
+$export KUBECONFIG=/Users/sconrod/.kube/dev-us-east-1
+
+This starts up your connection to concourse:
+$kubectl port-forward --namespace cost-reporting automation-web-5959b4987c-8zjvx 8080:8080
