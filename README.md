@@ -5,7 +5,7 @@ repo contact: sconrod@cisco.com, sherrilconrod@yahoo.com
 
 Env Setup
 If you do not have an existing CICD environment setup you can first set that up as follows:
-1 Deploy KOPS kubernetes cluster to Cloud Provider & setup DNS with your domain
+1. Deploy KOPS kubernetes cluster to Cloud Provider & setup DNS with your domain(you can buy one from godaddy if you need one)
 2. Deploy hashicorp vault helm chart, Configure Chart(update DNS etc in helm values)
 3. Follow the steps at Concourse to setup the approle method of auth in vault and use the Cloud Provider docs to 
 setup the CP with vault, for example, for AWS https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-auth-method-aws
