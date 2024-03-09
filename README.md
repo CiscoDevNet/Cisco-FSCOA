@@ -1,6 +1,13 @@
 # Cisco-FSCOA
 Cisco Full Stack Cloud Operations Automation
 
+SD-WAN
+This lab automates much of the SD-WAN cluster deployment into the Cloud Provider for MSPs and explains how to setup
+the secure pipeline integrated with hashicorp vault and concourse, to deploy and configure an SD-WAN cluster in the cloud.
+
+The underlying infrastructure is - Cloud Provider Account, self managed kubernetes cluster(kops works),
+SD-WAN Images(all 3 personalities), vault and concourse helm install, integration with Cloud Provider. Many options available.
+
 repo contact: sconrod@cisco.com, sherrilconrod@yahoo.com
 
 Env Setup
@@ -19,5 +26,7 @@ cloud provider, vault etc. If green you can then instantiate your first pipeline
 Deploys VPC and All Objects and Deploys SDWAN Images, Configures a high degree of SDWAN Connects and Configures up to the point of Certificate Installation.
 
 More Specific Documentation is included in Repo 
+
+![Alt text](https://github.com/CiscoDevNet/Cisco-FSCOA/blob/main/devops-basic-componentblock-arch.png)
 
 ![Alt text](https://github.com/CiscoDevNet/Cisco-FSCOA/blob/main/sample-cicd-pipeline.png)
